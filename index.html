@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Your page title here :)</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/skeleton-alerts.css">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+      <div class="one-half column" style="margin-top: 15%">
+        <h4>Register a Homebrew Talk!</h4>
+        <p>Homebrew talks are a cool and casual way to talk about projects that interest you, projects that you're working on, or any thing else you want to share with the world. </p>
+        <p>Homebrew talks happen biweekly on Tuesdays throughout the school year. Anyone is allowed to submit a talk, regardless of club membership. We're looking forward to your interesting entries!</p>
+	      <button id="start">Start Here</button>
+      </div>
+      <!--div class="one-half column" style="margin-top: 15%" id="login">
+        <form id="login-form">
+          <label for="username">Username</label>
+          <input class="u-full-width" placeholder="asantiago11" id="username" type="text">
+          <label for="password">Password</label>
+          <input class="u-full-width" placeholder="i swear ITS told me to change this" id="password" type="password">
+          <input class="button" value="Login" type="submit">
+      </div-->
+      <div class="one-half column" style="margin-top: 15%" id="registration">
+        <form id="registration-form" action="/cgi-bin/endpoint.py" method="post">
+          <label for="name">Your Name</label>
+          <input class="u-full-width" placeholder="Aaron Williams" name="name" type="text">
+          <label for="topic">Talk Topic</label>
+          <input class="u-full-width" placeholder="Retro Video Games" name="topic" type="text">
+          <label for="duration">Expected Duration</label>
+          <select class="u-full-width" name="duration">
+            <option value="10">10 minutes</option>
+            <option value="20">20 minutes</option>
+            <option value="40">40 minutes</option>
+          </select>
+          <label for="description">Talk Description</label>
+          <textarea class="u-full-width" placeholder="C is a much better langauge than Java because ..." name="description"></textarea>
+
+          <label>
+            <input name="recorded" type="checkbox">
+            <span class="label-body">Share my talk with the Internet</span>
+          </label>
+          <input class="button-primary" value="Submit" type="submit">
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- JS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <script src="js/jquery-3.1.0.min.js"></script>
+  <script src="js/app.js"></script>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
