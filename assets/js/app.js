@@ -26,18 +26,18 @@ var needsRefresh = false;
 var registrationForm = $('#registration-form');
 registrationForm.submit(function (event) {
 	$('.alert').fadeOut();
-	var url = '/cgi-bin/endpoint.py';
+	var url = '/api/v1/talks';
 	$.ajax({
 		type: 'POST',
 		url: url,
 		data: registrationForm.serialize(),
 		success: function (data) {
-			if (data.success) {
-				needsRefresh = true;
-				registrationForm.append('<p class="alert alert-success"><strong>Well Done!</strong> You\'re registered!</p>');
-				formButton.html('Register another talk?');
-				return;
-			}
+			needsRefresh = true;
+			registrationForm.append('<p class="alert alert-success"><strong>Well Done!</strong> You\'re registered!</p>');
+			formButton.html('Register another talk?');
+			return;
+		},
+		error: function () {
 			registrationForm.append('<p class="alert alert-error"><strong>Oh Snap!</strong> You\'re missing a few fields! Try again!</p>');
 		}
 	});
