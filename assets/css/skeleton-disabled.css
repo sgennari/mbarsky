@@ -1,0 +1,25 @@
+input.button-primary[disabled],
+input.button[disabled],
+input.button-primary[disabled]:focus,
+input.button[disabled]:focus,
+input.button-primary[disabled]:hover,
+input.button[disabled]:hover {
+  background: #CCCCCC;
+  border-color: #CCCCCC;
+  text-shadow: none;
+}
+
+input[disabled],
+textarea[disabled],
+select[disabled],
+input[disabled]:focus,
+textarea[disabled]:focus,
+select[disabled],
+input[disabled]:hover,
+textarea[disabled]:hover,
+select[disabled]:hover {
+  border-color: #3498DB;
+  color: #3498DB;
+  background-color: #D6EAF8;
+  text-shadow: none;
+}

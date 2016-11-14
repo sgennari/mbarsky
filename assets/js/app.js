@@ -12,6 +12,7 @@ formButton.click(function () {
 		// login.fadeIn();
 		registration.fadeIn();
 		registrationForm.trigger('reset');
+		registrationForm.find(':input').prop('disabled', false);
 		formButton.html('Close Registration');
 	} else {
 		$('.alert').fadeOut();
@@ -33,6 +34,7 @@ registrationForm.submit(function (event) {
 		data: registrationForm.serialize(),
 		success: function (data) {
 			needsRefresh = true;
+			registrationForm.find(':input').prop('disabled', true);
 			registrationForm.append('<p class="alert alert-success"><strong>Well Done!</strong> You\'re registered!</p>');
 			formButton.html('Register another talk?');
 			return;
