@@ -42,8 +42,11 @@ func newTalk(c *gin.Context) {
 func emailClub(t talkForm) {
 	subject := fmt.Sprintf("%s hosted by %s", t.Topic, t.Name)
 	body := fmt.Sprintf("%s will be hosting a talk on \"%s\" for about %s minutes.\r\n\r\n Description: %s\r\n", t.Name, t.Topic, t.Duration, t.Description)
-	msg := fmt.Sprintf("Subject: [Homebrew] %s\r\nFrom: Homebrewstr <homebrew@src-code.simons-rock>\r\n\r\n%s", subject, body)
-	smtp.SendMail("localhost", nil, "homebrew@src-code.simons-rock", []string{"cs_club@simons-rock.edu"}, []byte(msg))
+	msg := fmt.Sprintf("Subject: [Homebrew] %s\r\n", subject) +
+		"From: Homebrewstr <homebrew@src-code.simons-rock>\r\n" +
+		"To: CS Club <cs_club@simons-rock.edu>\r\n" +
+		fmt.Sprintf("\r\n%s", body)
+	smtp.SendMail("localhost:25", nil, "homebrew@src-code.simons-rock", []string{"cs_club@simons-rock.edu"}, []byte(msg))
 }
 
 func passFunc(c *gin.Context) {
